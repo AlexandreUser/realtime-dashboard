@@ -1,7 +1,9 @@
 .App {
   text-align: center;
 }
-
+.apexcharts-yaxis{
+  color: white;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -12,7 +14,10 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+text  {
+  color: white;
+  fill: white;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

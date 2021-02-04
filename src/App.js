@@ -39,7 +39,7 @@ function App() {
               setGauge2(gauge2Value)
               setCount(10)
           }
-          const id = setInterval(timer, 500);
+          const id = setInterval(timer, 2500);
           return () => clearInterval(id);
       },
       [currentCount]

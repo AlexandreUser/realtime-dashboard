@@ -39,6 +39,7 @@ export default function GenericChart(props){
               },
               
           chart: {
+foreColoer:"white",
             events: {
               zoomed: function (chartContext, options) {
                 setZoomed(options)
@@ -123,8 +124,11 @@ export default function GenericChart(props){
               zoomed: function (chartContext, options) {
                 setZoomed(options)
                 console.log(options)
-              }
+              },
+             
             },
+            foreColoer:"white",
+
             type: 'area',
             stacked: false,
             height: 350,
