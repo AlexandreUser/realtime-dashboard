@@ -1,0 +1,16 @@
+.gaugeContainer{
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+}
+.gaugeHolder{
+    width: 32%;
+    height: auto;
+}
+.gaugeLabel{
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 0px;
+}
