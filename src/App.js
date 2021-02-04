@@ -36,7 +36,7 @@ function App() {
 
               setGauge1(gauge1Value)
                 console.log(gauge1Serie)
-              setGauge2()
+              setGauge2(gauge2Value)
               setCount(10)
           }
           const id = setInterval(timer, 500);
