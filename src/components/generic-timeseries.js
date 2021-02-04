@@ -45,7 +45,7 @@ export default function GenericChart(props){
             size: 0,
           },
           title: {
-            text: 'Stock Price Movement',
+            text: 'Weight and positive value',
             align: 'left'
           },
           fill: {
