@@ -61,7 +61,7 @@ export default function GenericChart(props){
           yaxis: {
             labels: {
               formatter: function (val) {
-                return (val )
+                return (val ).toFixed(2)
               },
             },
             title: {
@@ -75,7 +75,7 @@ export default function GenericChart(props){
             shared: false,
             y: {
               formatter: function (val) {
-                return (val )
+                return (val ).toFixed(2)
               }
             }
           }
