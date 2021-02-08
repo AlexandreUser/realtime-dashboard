@@ -193,7 +193,9 @@ export default function GenericChart(props){
     
     
       return <div id="chart">
-        <ReactApexChart options={data.options} series={data.series} type="area" height={350} width={window.window.innerWidth-200} />
+        <ReactApexChart options={data.options} series={[data.series[0]]} type="area" height={250} width={window.window.innerWidth-200} />
+        <ReactApexChart options={data.options} series={[data.series[1]]} type="area" height={250} width={window.window.innerWidth-200} />
+
         </div>
     }
      

@@ -8,7 +8,9 @@
   height: 40vmin;
   pointer-events: none;
 }
-
+span{
+  color: white!important;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -43,4 +45,13 @@ text  {
 }
 .apexcharts-menu-item {
   color: black;
+}
+.buttonStyle{
+  width: 140px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4634eb;
+  color: white;
+  font-weight: bold;
 }

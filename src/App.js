@@ -3,6 +3,9 @@ import './App.css';
 import styles from "./styles/home.module.css"
 import GenericGauge from "./components/generic-gauge"
 import SimpleChart from "./components/generic-timeseries"
+import BrushChart from "./components/generic-brush-timeseries"
+import SyncChart from "./components/generic-sync-timeseries"
+
 import { useState,useEffect } from 'react';
 import { TimeSeries, Index } from "pondjs";
 function App() {
@@ -13,12 +16,12 @@ function App() {
   const [gauge2,setGauge2] = useState(0)
   const [currentCount, setCount] = useState(10);
   const timer = () => setCount(currentCount - 1);
-
+  const [chartSelected, setChartSelected] = useState(0)
   useEffect(
       () => {
           if (currentCount <= 0) {
-              let gauge1Value = Math.random()
-              let gauge2Value = Math.random()
+              let gauge1Value = Math.random().toFixed(2)
+              let gauge2Value = Math.random().toFixed(2)
 
               let newSerie2 = gauge2Serie
 
@@ -35,7 +38,6 @@ function App() {
               setGauge1Serie(newSerie1)
 
               setGauge1(gauge1Value)
-                console.log(gauge1Serie)
               setGauge2(gauge2Value)
               setCount(10)
           }
@@ -69,7 +71,14 @@ function App() {
 
           </div>
         </div>
-        <SimpleChart timeSeries={[{
+        <div className={styles.gaugeContainer}>
+        <button className="buttonStyle" onClick={()=>{setChartSelected(0)}}>Simple chart</button>
+        <button className="buttonStyle"  onClick={()=>{setChartSelected(1)}}>Brush chart</button>
+        <button className="buttonStyle"  onClick={()=>{setChartSelected(2)}}>syncronized chart</button>
+
+        </div>
+        {chartSelected === 0 && 
+         <SimpleChart timeSeries={[{
           name: 'Weight',
           type:"line",
           data: gauge1Serie.slice()
@@ -79,6 +88,33 @@ function App() {
           type:"area",
           data: gauge2Serie.slice()
         }]}/>
+       
+        }
+        {chartSelected === 1 && 
+          <BrushChart timeSeries={[{
+            name: 'Weight',
+            type:"line",
+            data: gauge1Serie.slice()
+          },
+          {
+            name: 'Positive conversion',
+            type:"area",
+            data: gauge2Serie.slice()
+          }]}/>
+        }
+        {chartSelected === 2 && 
+        <SyncChart timeSeries={[{
+          name: 'Weight',
+          type:"line",
+          data: gauge1Serie.slice()
+        },
+        {
+          name: 'Positive conversion',
+          type:"area",
+          data: gauge2Serie.slice()
+        }]}
+        
+        />}
        
       </header>
     </div>
